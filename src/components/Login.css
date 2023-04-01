@@ -1,0 +1,57 @@
+.master {
+  width: 25vw;
+  height: 90vh;
+  background-color: white;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+.loginImage {
+  border-radius: 20px;
+  width: 25vw;
+}
+.loginInput {
+  display: flex;
+  flex-direction: column;
+}
+.email,
+.password {
+  width: 20vw;
+  margin: auto;
+  padding: 12px;
+  border-radius: 10px;
+}
+.master h1 {
+  color: #7659c5;
+  text-align: center;
+}
+.master p {
+  text-align: center;
+}
+.password {
+  margin-top: 10px;
+}
+.lower {
+  display: flex;
+  justify-content: space-around;
+  color: #7659c5;
+  font-weight: bolder;
+}
+.bttn1 {
+  width: 21vw;
+  padding: 12px;
+  border-radius: 10px;
+  margin-left: 35px;
+  background-color: #7659c5;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+.loginfooter p{
+    border: 1px solid black;
+    width: 20vw;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 8px;
+}
