@@ -1,20 +1,70 @@
 import "./Login.css";
 import LoginImage from "../assets/Login.png";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 const Login = () => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+  const loginHandler = (event) => {
+    setEmail(event.target.value);
+  };
+  const passwordHandler2 = (event) => {
+    setPassword(event.target.value);
+  };
+  const submitHandler = () => {
+    let obj = {
+      email: email,
+      password: password,
+      returnSecureToken: true,
+    };
+    axios
+      .post(
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDdhImpmo5aNCcGZmwXFgJQrWEZ1kQbZWs",
+        obj
+      )
+      .then((response) => {
+        navigate("/home", { replace: true });
+      })
+      .catch((error) => {
+        alert(error.response.data.error.message);
+      });
+    setEmail("");
+    setPassword("");
+  };
   return (
     <div className="master">
       <img src={LoginImage} className="loginImage" />
-      <h1 >Welcome to Bardeen</h1>
+      <h1>Welcome to Bardeen</h1>
       <p>Let's log in to launch your automations.</p>
       <div className="loginInput">
-        <input type={"email"} className="email" placeholder="Email Address" />
-        <input type={"password"} className="password" placeholder="Password" />
+        <input
+          type={"email"}
+          className="email"
+          placeholder="Email Address"
+          onChange={loginHandler}
+          value={email}
+        />
+        <input
+          type={"password"}
+          className="password"
+          placeholder="Password"
+          onChange={passwordHandler2}
+          value={password}
+        />
       </div>
       <div className="lower">
-        <p>Create Account</p>
+        <Link to={"signup"} style={{ textDecoration: "none" }}>
+          {" "}
+          <p>Create Account</p>
+        </Link>
+
         <p>Forgot Password?</p>
       </div>
-      <button className="bttn1">Sign In</button>
+      <button className="bttn1" onClick={submitHandler}>
+        Sign In
+      </button>
       <div className="loginfooter">
         <p>Sign in with Google</p>
         <p>Sign in with Github</p>

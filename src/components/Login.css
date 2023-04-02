@@ -2,8 +2,9 @@
   width: 25vw;
   height: 90vh;
   background-color: white;
-  margin: auto;
-  margin-top: 40px;
+  position: absolute;
+  top: 40px;
+  left: 650px;
   border-radius: 20px;
 }
 .loginImage {
@@ -47,11 +48,14 @@
   font-weight: bolder;
   border: none;
 }
-.loginfooter p{
-    border: 1px solid black;
-    width: 20vw;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 20px;
-    padding: 8px;
+.loginfooter p {
+  border: 1px solid black;
+  width: 20vw;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 8px;
+}
+button {
+  cursor: pointer;
 }
