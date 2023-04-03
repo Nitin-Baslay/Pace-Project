@@ -1,0 +1,44 @@
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homediv {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+}
+.homefirst {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: blue; */
+  width: 50vw;
+}
+.d {
+  margin-left: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px 15px;
+  background-color: #f64f51;
+  color: white;
+}
+.seconddiv{
+    width: 15vw;
+    /* background-color: #f64f51; */
+    display: flex;
+    justify-content: space-between;
+}
+.iconone{
+    width: 30px;
+    height: 30px;
+}
+.iconone.one{
+    margin-right: 20px;
+}
+.article{
+    margin-left: 40px;
+}
