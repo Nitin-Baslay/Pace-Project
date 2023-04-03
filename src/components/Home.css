@@ -1,7 +1,7 @@
 .navbar {
-  width: 100vw;
+  width: 90vw;
   height: 10vh;
-  /* background-color: aqua; */
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,30 +15,86 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: blue; */
   width: 50vw;
 }
 .d {
-  margin-left: 40px;
   border: 1px solid black;
   border-radius: 50%;
   padding: 10px 15px;
   background-color: #f64f51;
   color: white;
 }
-.seconddiv{
-    width: 15vw;
-    /* background-color: #f64f51; */
-    display: flex;
-    justify-content: space-between;
+.seconddiv {
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
 }
-.iconone{
-    width: 30px;
-    height: 30px;
+.iconone {
+  width: 30px;
+  height: 30px;
 }
-.iconone.one{
-    margin-right: 20px;
+.article {
+  margin-left: 40px;
 }
-.article{
-    margin-left: 40px;
+.line {
+  border: 3px solid black;
+  width: 95vw;
+}
+.masternewsdiv {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+.newsmain {
+  width: 30vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+.newsimg {
+  width: 20vw;
+}
+@media screen and (max-width: 1025px) {
+  .navbar {
+    width: 95vw;
+  }
+  .line {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 769px) {
+  .seconddiv {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 426px) {
+  .masternewsdiv {
+    width: 100vw;
+    display: block;
+  }
+  .newsmain {
+    width: 100vw;
+  }
+  .navbar {
+    display: block;
+  }
+  .homefirst,
+  .seconddiv {
+    width: 90vw;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 376px) {
+  .homefirst,
+  .seconddiv {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 321px) {
+  .homefirst,
+  .seconddiv,
+  .newsmain,
+  .line {
+    width: 120vw;
+  }
 }

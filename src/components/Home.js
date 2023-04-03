@@ -5,6 +5,7 @@ import { SiAudiomack } from "react-icons/si";
 import "./Home.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
@@ -23,7 +24,11 @@ const Home = () => {
     <div className="homediv">
       <nav className="navbar">
         <div className="homefirst">
-          <p className="d">D</p>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            {" "}
+            <p className="d">D</p>
+          </Link>
+
           <p>LEARN</p>
           <p>BLOG</p>
           <p>BOOKMARKS</p>
@@ -37,19 +42,17 @@ const Home = () => {
           <SiAudiomack className="iconone one" />
         </div>
       </nav>
-      <hr style={{ border: "3px solid black" }} />
+      <hr className="line" />
       <h1 className="article">Featured Article</h1>
-      <div>
+      <div className="masternewsdiv">
         {newsData.map((ele) => {
           return (
-            <div className="masternewsdiv">
-              <div className="newsmain">
-                <h1 className="title">{ele.title}</h1>
-                <img src={ele.urlToImage} className="newsimg" alt="image"></img>
-                <h2>{ele.content}</h2>
-                <h2>{ele.description}</h2>
-                <h5>By: {ele.author}</h5>
-              </div>
+            <div className="newsmain" >
+              <h1 className="title">{ele.title}</h1>
+              <img src={ele.urlToImage} className="newsimg" alt="image"></img>
+              <h2>{ele.content}</h2>
+              <h2>{ele.description}</h2>
+              <h5>By: {ele.author}</h5>
             </div>
           );
         })}

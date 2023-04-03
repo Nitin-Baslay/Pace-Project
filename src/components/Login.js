@@ -3,6 +3,8 @@ import LoginImage from "../assets/Login.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { auth, provider, providerone } from "./config";
+import { signInWithPopup } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -32,6 +34,25 @@ const Login = () => {
       });
     setEmail("");
     setPassword("");
+  };
+  const googleHandler = () => {
+    signInWithPopup(auth, provider)
+      .then((success) => {
+        navigate("/home", { replace: true });
+      })
+      .catch((failure) => {
+        console.log(failure);
+      });
+  };
+  const githubhandler = () => {
+    signInWithPopup(auth, providerone)
+      .then((success) => {
+        navigate("/home", { replace: true });
+        console.log(success);
+      })
+      .catch((failure) => {
+        console.log(failure);
+      });
   };
   return (
     <div className="master">
@@ -66,8 +87,12 @@ const Login = () => {
         Sign In
       </button>
       <div className="loginfooter">
-        <p>Sign in with Google</p>
-        <p>Sign in with Github</p>
+        <p onClick={googleHandler} className="btnl">
+          Sign in with Google
+        </p>
+        <p onClick={githubhandler} className="btnl">
+          Sign in with Github
+        </p>
       </div>
     </div>
   );
